@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iSearch. - Pesquise o que quiser.</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../icon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../icon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../icon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../icon/site.webmanifest" />
+  </head>
+  <body>
+    <div class="logo">
+      <img style="user-select: none" src="../assets/images/101.png" alt="" />
+      <div class="self">Pesquise o que quiser.</div>
+    </div>
+    <script
+      async
+      src="https://cse.google.com/cse.js?cx=137f72dffe35f49bf"
+    ></script>
+    <div id="loading-screen" aria-busy="true" aria-live="polite">
+      <div class="loading-brand" aria-label="Carregando">
+        <div
+          class="loading-logo-wrap"
+          style="
+            padding: 0;
+            background: transparent;
+            box-shadow: none;
+            border: none;
+          "
+        >
+          <img class="loading-logo" src="../assets/images/101.png" alt="" />
+        </div>
+
+        <div class="loading-self">Pesquise o que quiser.</div>
+      </div>
+    </div>
+
+    <div class="gcse-search"></div>
+    <script src="../js/customizations.js"></script>
+
+    <script>
+      (function () {
+        const el = document.getElementById("loading-screen");
+        if (!el) return;
+
+        // Em 3s: sai da tela e fica com opacity 0.3
+        setTimeout(() => {
+          el.style.transition = "transform 700ms ease, opacity 700ms ease";
+          el.style.opacity = "0.3";
+          el.style.transform = "translateY(-20px)";
+        }, 3000);
+
+        // Depois: esconde completamente para não bloquear a página
+        setTimeout(() => {
+          el.style.display = "none";
+        }, 3700);
+      })();
+    </script>
+
+    <footer>
+      <ul class="list">
+        <a href="">Sobre</a>
+        <a href="google.com">Aprimorado pela Google</a>
+        <a href="../index.html">EN-US</a>
+      </ul>
+    </footer>
+  </body>
+</html>

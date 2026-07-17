@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  user-select: none;
+  padding: 0;
+  font-family: var(--font);
+}
+:root {
+  /* Modern white theme (less "#f3f3f3", more depth) */
+  --bg: #ffffff;
+  --theme: #f6f6f7;
+  --surface: #f5f7fb;
+
+  --border-color: rgba(12, 24, 40, 0.14);
+  --text: #0b1220;
+  --muted: rgba(11, 18, 32, 0.62);
+
+  --color: #0a66ff;
+
+  --shadow: 0 14px 40px rgba(2, 8, 23, 0.1);
+  --shadow-soft: 0 10px 26px rgba(2, 8, 23, 0.08);
+
+  --radius: 20px;
+  --font: "Inter", sans-serif;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter.ttf");
+}
+body {
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  flex-direction: column;
+  gap: 4px;
+}
+.logo {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  user-select: none;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+.gsc-results-wrapper-overlay .gsc-results-wrapper-visible {
+  box-shadow: none;
+}
+.logo img {
+  height: 80px;
+  user-select: none;
+  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.38));
+}
+footer {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  bottom: 0;
+  border-top: solid 1px var(--border-color);
+  background-color: var(--theme);
+}
+#gsc-iw-id1 {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  border-radius: 3rem;
+  border: solid 1px var(--border-color);
+}
+
+/* Loading screen */
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  background: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  gap: 14px;
+  z-index: 9999;
+  opacity: 1;
+  transform: translateY(0);
+}
+.loading-bar {
+  width: 290px;
+  position: relative;
+  height: 3.4px;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #ccc;
+}
+.bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  animation: load 3s;
+  background-color: var(--color);
+}
+#loading-screen .logo {
+  scale: 0.8;
+}
+@keyframes load {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.spinner {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 3px solid rgba(10, 102, 255, 0.15);
+  border-top-color: rgba(10, 102, 255, 0.95);
+  animation: bb-spin 900ms linear infinite;
+}
+
+.loading-text {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+@keyframes bb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.list {
+  margin-left: 10px;
+  gap: 0.9rem;
+  display: flex;
+}
+.list a:hover {
+  color: var(--color);
+  text-decoration: underline;
+}
